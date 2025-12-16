@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# 무인정보단말기 UI 플랫폼 - 주문형 샘플
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+무인정보단말기 UI 플랫폼([`kioskui.or.kr`](https://kioskui.or.kr))을 참고하여 제작한 **주문형 키오스크 UI 샘플 프로젝트**입니다.
 
-Currently, two official plugins are available:
+## 주요 기능
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **공통 UI 컴포넌트**: 재사용 가능한 키오스크 UI 컴포넌트(버튼/카드 등)
+- **주문형 일반 모드**: 표준 색상과 대비를 사용한 기본 UI
+- **주문형 고대비 모드**: 시각 접근성을 고려한 고대비 색상 적용
+- **주문형 저대비 모드**: 눈의 피로를 줄이기 위한 저대비 색상 적용
 
-## React Compiler
+## 기술 스택
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19**
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **React Router**
 
-## Expanding the ESLint configuration
+## 설치 및 실행
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# 의존성 설치
+pnpm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# 개발 서버 실행
+pnpm run dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 빌드
+pnpm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 프로젝트 구조
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/
+├── components/
+│   └── ui/                 # 공통 UI 컴포넌트(shadcn 기반)
+│       ├── button.tsx
+│       └── card.tsx
+├── lib/
+│   ├── cart.ts             # 장바구니 유틸
+│   ├── mockData.ts         # 샘플 데이터/필터
+│   └── utils.ts
+├── pages/
+│   └── Order.tsx           # 주문 화면(모드별 스타일/동작)
+├── App.tsx                 # 라우팅/메인 앱
+└── main.tsx                # 진입점
 ```
+
+## 접근성 특징
+
+- **큰 터치 영역**: 버튼 등 주요 조작 요소는 충분한 클릭/터치 영역을 확보
+- **큰 폰트 크기**: 키오스크에 적합한 큰 텍스트 크기 사용
+- **명확한 시각적 피드백**: 상태 변화(선택/호버 등)가 명확히 구분되도록 스타일 적용
+- **키보드 접근성**: 기본 포커스/키보드 내비게이션을 고려
+- **ARIA 레이블**: 스크린 리더 사용자를 위한 레이블 제공(필요한 곳에 적용)
+
+## 참고
+
+- 무인정보단말기 UI 플랫폼: [`kioskui.or.kr`](https://kioskui.or.kr)
