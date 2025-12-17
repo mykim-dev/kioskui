@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import KioskLayout, { type KioskStep } from './_kiosk-layout'
+import KioskLayout, { type KioskStep } from './kiosk-layout'
 
 export default function InfoEtcSample() {
   const steps = useMemo<KioskStep[]>(

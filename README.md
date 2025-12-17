@@ -43,7 +43,7 @@ src/
 │   ├── mockData.ts         # 샘플 데이터/필터
 │   └── utils.ts
 ├── pages/
-│   └── Order.tsx           # 주문 화면(모드별 스타일/동작)
+│   └── order.tsx           # 주문 화면(모드별 스타일/동작)
 ├── App.tsx                 # 라우팅/메인 앱
 └── main.tsx                # 진입점
 ```
@@ -61,7 +61,7 @@ src/
 - 무인정보단말기 UI 플랫폼: [`kioskui.or.kr`](https://kioskui.or.kr)
 - [웹접근성을고려한콘텐츠제작기법2.0](./참고/웹접근성을고려한콘텐츠제작기법2.0.pdf)
 - [한국형웹콘텐츠접근성지침2.2(KWCAG2.2)](./참고/한국형웹콘텐츠접근성지침2.2(KWCAG2.2).pdf)
-- [키오스크 UI 접근성 제작 가이드(요약)](./docs/kiosk-accessibility-guidelines.md)
+- [키오스크 UI 접근성 제작 가이드](./docs/kiosk-accessibility-guidelines.md)
 - [컴포넌트별 접근성 체크리스트(버튼/카드/모달/수량조절/결제)](./docs/component-accessibility-checklist.md)
-- [공통 UI 가이드(요약) — kioskui.or.kr 정리](./docs/common-ui-guide.md)
+- [공통 UI 가이드 — kioskui.or.kr 정리](./docs/common-ui-guide.md)
 - [shadcn + Base UI 워크플로우 (Radix-free 유지)](./docs/shadcn-base-ui-workflow.md)

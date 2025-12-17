@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
-import { Link } from 'react-router-dom'
+import { Button } from '../components/ui/button'
 
 import commonUiGuideMd from '../../docs/common-ui-guide.md?raw'
 import checklistMd from '../../docs/component-accessibility-checklist.md?raw'
@@ -10,12 +10,12 @@ type DocKey = 'guidelines' | 'common-ui-guide' | 'checklist'
 
 const DOCS: Record<DocKey, { title: string; description: string; md: string }> = {
   guidelines: {
-    title: '키오스크 UI 접근성 제작 가이드(요약)',
+    title: '키오스크 UI 접근성 제작 가이드',
     description: '사이즈/대비/확대·축소/키보드 등 제작 시 필수 항목 요약',
     md: guidelinesMd,
   },
   'common-ui-guide': {
-    title: '공통 UI 가이드(요약) — kioskui.or.kr 정리',
+    title: '공통 UI 가이드 — kioskui.or.kr 정리',
     description: '개요/화면 레이아웃 가이드/사용성 체크리스트 핵심 정리',
     md: commonUiGuideMd,
   },
@@ -28,67 +28,46 @@ const DOCS: Record<DocKey, { title: string; description: string; md: string }> =
 
 export default function Guide() {
   const [docKey, setDocKey] = useState<DocKey>('guidelines')
-
   const doc = useMemo(() => DOCS[docKey], [docKey])
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="flex items-center justify-between gap-4 mb-6">
+    <div className="w-5xl mx-auto">
+      <h1 className="text-3xl font-bold py-4">무인정보단말기 UI 플랫폼</h1>
+      <div className="flex items-center justify-between gap-4">
         <div>
           <h2 className="text-2xl font-bold">{doc.title}</h2>
-          <p className="text-slate-600">{doc.description}</p>
+          <p className="text-sm text-muted-foreground">{doc.description}</p>
         </div>
-        <Link
-          to="/order/normal"
-          className="px-4 py-2 rounded-lg border border-slate-300 hover:bg-slate-50 transition"
-        >
-          주문 화면으로
-        </Link>
       </div>
 
-      <div className="flex flex-wrap gap-2 mb-6">
-        <button
-          type="button"
+      <div className="flex flex-wrap gap-4 my-4">
+        <Button
           onClick={() => setDocKey('guidelines')}
-          className={[
-            'px-4 py-2 rounded-lg border transition',
-            docKey === 'guidelines'
-              ? 'bg-slate-900 text-white border-slate-900'
-              : 'bg-white text-slate-900 border-slate-300 hover:bg-slate-50',
-          ].join(' ')}
+          size="lg"
+          variant={docKey === 'guidelines' ? 'default' : 'outline'}
           aria-pressed={docKey === 'guidelines'}
         >
-          제작 가이드
-        </button>
-        <button
+          키오스크 UI 가이드
+        </Button>
+        <Button
           type="button"
           onClick={() => setDocKey('common-ui-guide')}
-          className={[
-            'px-4 py-2 rounded-lg border transition',
-            docKey === 'common-ui-guide'
-              ? 'bg-slate-900 text-white border-slate-900'
-              : 'bg-white text-slate-900 border-slate-300 hover:bg-slate-50',
-          ].join(' ')}
+          variant={docKey === 'common-ui-guide' ? 'default' : 'outline'}
           aria-pressed={docKey === 'common-ui-guide'}
         >
           공통 UI 가이드
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
           onClick={() => setDocKey('checklist')}
-          className={[
-            'px-4 py-2 rounded-lg border transition',
-            docKey === 'checklist'
-              ? 'bg-slate-900 text-white border-slate-900'
-              : 'bg-white text-slate-900 border-slate-300 hover:bg-slate-50',
-          ].join(' ')}
+          variant={docKey === 'checklist' ? 'default' : 'outline'}
           aria-pressed={docKey === 'checklist'}
         >
           컴포넌트 체크리스트
-        </button>
+        </Button>
       </div>
 
-      <div className="bg-white rounded-xl border border-slate-200 p-6">
+      <div className="h-[calc(100vh-16rem)] rounded-xl border p-5 overflow-auto">
         <ReactMarkdown
           components={{
             h1: ({ children }) => (

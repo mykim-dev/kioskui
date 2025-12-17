@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import KioskLayout, { type KioskStep } from './_kiosk-layout'
+import KioskLayout, { type KioskStep } from './kiosk-layout'
 
 export default function OrderFlowSample() {
   const steps = useMemo<KioskStep[]>(
@@ -18,7 +18,7 @@ export default function OrderFlowSample() {
 
   return (
     <KioskLayout
-      title="주문형(공통 레이아웃) 샘플"
+      title="주문형 샘플"
       subtitle="주문형 화면을 공통 레이아웃으로 구성한 예시"
       steps={steps}
       activeStepIndex={activeStepIndex}
