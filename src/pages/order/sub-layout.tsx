@@ -11,22 +11,23 @@ import {
 } from '@/components/ui/dialog'
 import { cn } from '@/lib/utils'
 import { BellIcon, HomeIcon, ZoomInIcon, ZoomOutIcon } from 'lucide-react'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
-export type KioskStep = {
+export type Step = {
   label: string
 }
 
-type KioskLayoutProps = {
+type SubLayoutProps = {
   title: string
   subtitle?: string
-  steps?: KioskStep[]
+  steps?: Step[]
   activeStepIndex?: number
   children: ReactNode
   rightPanel?: ReactNode
   homePath?: string
 }
 
-export default function KioskLayout({
+export default function SubLayout({
   title,
   subtitle,
   steps,
@@ -34,7 +35,7 @@ export default function KioskLayout({
   children,
   rightPanel,
   homePath = '/',
-}: KioskLayoutProps) {
+}: SubLayoutProps) {
   const navigate = useNavigate()
   const [isA11yDialogOpen, setIsA11yDialogOpen] = useState(false)
   const [zoomLevel, setZoomLevel] = useState(1)
@@ -60,7 +61,7 @@ export default function KioskLayout({
   }
 
   return (
-    <div className="w-full h-screen mx-auto">
+    <div className="w-full h-screen mx-auto bg-amber-50">
       <header className="h-[90px] border">
         <div className="flex h-full items-center gap-4 p-6">
           <Button variant="secondary" size="lg" onClick={() => navigate(homePath)}>
@@ -112,11 +113,17 @@ export default function KioskLayout({
 
       <section className="h-[calc(100vh-270px)] border">
         <div className="h-full grid grid-cols-[3fr_1fr]">
-          <main className="flex-1 p-6 overflow-y-auto">
-            {children}
+          <main className="flex-1 p-6">
+            <ScrollArea className="h-[calc(100vh-270px)] border border-red-500">
+              {children}
+            </ScrollArea>
           </main>
           {rightPanel ? (
-            <aside className="p-6 border-l-2 overflow-y-auto">{rightPanel}</aside>
+            <aside className="p-6 border-l-2">
+              <ScrollArea className="h-[calc(100vh-270px)] border border-green-500">
+              {rightPanel}
+              </ScrollArea>
+            </aside>
           ) : null}
         </div>
       </section>

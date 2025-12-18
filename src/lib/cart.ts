@@ -1,4 +1,4 @@
-import type { Menu } from './mockData'
+import type { Menu } from '../mocks/ondemand'
 
 export type CartItem = {
   id: number

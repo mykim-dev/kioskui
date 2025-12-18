@@ -6,7 +6,7 @@ import OrderFlowSample from './pages/order-flow'
 import Order from './pages/order'
 import TicketingSample from './pages/ticketing'
 import { Button } from './components/ui/button'
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from './components/ui/drawer'
+import { Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTitle } from './components/ui/drawer'
 import { MenuIcon, XIcon } from 'lucide-react'
 import { useState } from 'react'
 

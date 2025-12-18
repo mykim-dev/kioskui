@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
-import { Button } from '../components/ui/button'
+import { Button } from '@/components/ui/button'
 
-import commonUiGuideMd from '../../docs/common-ui-guide.md?raw'
-import checklistMd from '../../docs/component-accessibility-checklist.md?raw'
-import guidelinesMd from '../../docs/kiosk-accessibility-guidelines.md?raw'
+import commonUiGuideMd from '@/docs/common-ui-guide.md?raw'
+import checklistMd from '@/docs/component-accessibility-checklist.md?raw'
+import guidelinesMd from '@/docs/kiosk-accessibility-guidelines.md?raw'
 
 type DocKey = 'guidelines' | 'common-ui-guide' | 'checklist'
 
