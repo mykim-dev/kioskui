@@ -37,7 +37,7 @@ export default function Guide() {
   const doc = useMemo(() => DOCS[docKey], [docKey])
 
   return (
-    <div className="w-5xl mx-auto">
+    <div className="w-full h-full p-6">
       <h1 className="text-3xl font-bold py-4">무인정보단말기 UI 플랫폼</h1>
       <div className="flex items-center justify-between gap-4">
         <div>

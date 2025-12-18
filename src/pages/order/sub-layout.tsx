@@ -61,7 +61,7 @@ export default function SubLayout({
   }
 
   return (
-    <div className="w-full h-screen mx-auto bg-amber-50">
+    <div className="w-screen h-screen bg-amber-50">
       <header className="h-[90px] border">
         <div className="flex h-full items-center gap-4 p-6">
           <Button variant="secondary" size="lg" onClick={() => navigate(homePath)}>
