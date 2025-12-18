@@ -113,8 +113,23 @@ export default function Guide() {
               </pre>
             ),
             img: ({ src, alt }) => (
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              <img src={src as any} alt={alt ?? ''} className="max-w-full h-auto rounded-lg border my-4" />
+              <img
+                src={(() => {
+                  const s = typeof src === 'string' ? src : ''
+                  const baseUrl = import.meta.env.BASE_URL ?? '/'
+                  const base = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl
+
+                  // If markdown uses absolute paths like "/images/type1.jpg",
+                  // make them GitHub Pages-safe by prefixing BASE_URL ("/<repo>/").
+                  if (s.startsWith('/') && base && !s.startsWith(base + '/')) {
+                    return `${base}${s}`
+                  }
+
+                  return s
+                })()}
+                alt={alt ?? ''}
+                className="max-w-full h-auto rounded-lg border my-4"
+              />
             ),
             code: ({ children, className }) => (
               <code

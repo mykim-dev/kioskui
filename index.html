@@ -16,7 +16,13 @@
               return s.replace(/~and~/g, '&')
             })
             .join('?')
-          window.history.replaceState(null, null, l.pathname + decoded + l.hash)
+          // Avoid accumulating "/" on each refresh:
+          // - l.pathname (project pages) usually ends with "/<repo>/"
+          // - decoded starts with "/route"
+          // -> "/<repo>//route" if concatenated naively
+          decoded = decoded.replace(/^\/+/, '/')
+          var basePath = l.pathname.endsWith('/') ? l.pathname.slice(0, -1) : l.pathname
+          window.history.replaceState(null, null, basePath + decoded + l.hash)
         }
       })(window.location)
     </script>
