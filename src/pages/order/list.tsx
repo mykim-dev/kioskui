@@ -12,11 +12,11 @@ function applyKioskModeToHtml(mode: KioskMode) {
   el.classList.add(`${mode}`)
 }
 
-interface orderProps {
+interface OrderListProps {
   mode: KioskMode
 }
 
-const order: React.FC<orderProps> = ({ mode }) => {
+const OrderList: React.FC<OrderListProps> = ({ mode }) => {
   const navigate = useNavigate()
   const [cart, setCart] = useState<Menu[]>([])
   const [selectedCategory, setSelectedCategory] = useState<CategoryId>('all')
@@ -169,6 +169,6 @@ const order: React.FC<orderProps> = ({ mode }) => {
   )
 }
 
-export default order
+export default OrderList
 
 

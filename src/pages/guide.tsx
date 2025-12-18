@@ -2,20 +2,26 @@ import { useMemo, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Button } from '@/components/ui/button'
 
-import commonUiGuideMd from '@/docs/common-ui-guide.md?raw'
-import checklistMd from '@/docs/component-accessibility-checklist.md?raw'
-import guidelinesMd from '@/docs/kiosk-accessibility-guidelines.md?raw'
+import commonUiGuideMd from '../../docs/common-ui-guide.md?raw'
+import checklistMd from '../../docs/component-accessibility-checklist.md?raw'
+import guidelinesMd from '../../docs/kiosk-accessibility-guidelines.md?raw'
+import kioskTypesMd from '../../docs/kiosk-types.md?raw'
 
-type DocKey = 'guidelines' | 'common-ui-guide' | 'checklist'
+type DocKey = 'guidelines' | 'kiosk-types' | 'common-ui-guide' | 'checklist'
 
 const DOCS: Record<DocKey, { title: string; description: string; md: string }> = {
+  'kiosk-types': {
+    title: '키오스크 유형 가이드(유통/주문/발권/안내 및 기타)',
+    description: '유형별 단말기/대표 step/샘플 화면 구성 요약',
+    md: kioskTypesMd,
+  },
   guidelines: {
     title: '키오스크 UI 접근성 제작 가이드',
     description: '사이즈/대비/확대·축소/키보드 등 제작 시 필수 항목 요약',
     md: guidelinesMd,
   },
   'common-ui-guide': {
-    title: '공통 UI 가이드 — kioskui.or.kr 정리',
+    title: '공통 UI 가이드',
     description: '개요/화면 레이아웃 가이드/사용성 체크리스트 핵심 정리',
     md: commonUiGuideMd,
   },
@@ -27,7 +33,7 @@ const DOCS: Record<DocKey, { title: string; description: string; md: string }> =
 }
 
 export default function Guide() {
-  const [docKey, setDocKey] = useState<DocKey>('guidelines')
+  const [docKey, setDocKey] = useState<DocKey>('kiosk-types')
   const doc = useMemo(() => DOCS[docKey], [docKey])
 
   return (
@@ -41,6 +47,14 @@ export default function Guide() {
       </div>
 
       <div className="flex flex-wrap gap-4 my-4">
+      <Button
+          type="button"
+          onClick={() => setDocKey('kiosk-types')}
+          variant={docKey === 'kiosk-types' ? 'default' : 'outline'}
+          aria-pressed={docKey === 'kiosk-types'}
+        >
+          키오스크 유형
+        </Button>
         <Button
           onClick={() => setDocKey('guidelines')}
           size="lg"
@@ -97,6 +111,10 @@ export default function Guide() {
               <pre className="bg-slate-950 text-slate-50 p-4 rounded-lg overflow-auto mb-4">
                 {children}
               </pre>
+            ),
+            img: ({ src, alt }) => (
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              <img src={src as any} alt={alt ?? ''} className="max-w-full h-auto rounded-lg border my-4" />
             ),
             code: ({ children, className }) => (
               <code

@@ -1,0 +1,3253 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+		
+		
+			<meta name="robots" content="index,nofollow">
+			<meta property="og:type" content="website" id="mtype">
+			<meta property="og:title" content="주문형 무인정보단말기" id="mtitle">
+			<meta property="og:description" content="주문형 무인정보단말기 | 무인정보단말기UI플랫폼" id="mdescription">
+			<meta property="og:image" content="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/common/logo_header.png">
+			<meta property="og:url" content="https://www.kioskui.or.kr/index.do?menu_id=00001075&menu_link==" id="murls">
+		
+	
+	<title>주문형 무인정보단말기 | 무인정보단말기UI플랫폼</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="/cmsh/kioskui.or.kr/images/common/favicon_32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/cmsh/kioskui.or.kr/images/common/favicon_16.png">
+	<link rel="stylesheet" href="/cmsh/kioskui.or.kr/css/base.css?ver=202512182218">
+	<link rel="stylesheet" href="/cmsh/kioskui.or.kr/css/slick.css?ver=202512182218">
+	<link rel="stylesheet" href="/cmsh/kioskui.or.kr/css/layout.css?ver=202512182218">
+	<link rel="stylesheet" href="/cmsh/kioskui.or.kr/css/jquery.datetimepicker.css?ver=202512182218">
+	<link rel="stylesheet" href="/cmsh/kioskui.or.kr/css/common.css?ver=202512182218">
+	<link rel="stylesheet" href="/cmsh/kioskui.or.kr/css/vote.css?ver=202512182218">
+	<link rel="stylesheet" href="/cmsh/kioskui.or.kr/css/content.css?ver=202512182218">
+	<link rel="stylesheet" href="/cmsh/kioskui.or.kr/css/print.css?ver=202512182218">
+	<link rel="canonical" href="https://www.kioskui.or.kr/index.do?menu_id=00001075">
+	<script src="/cmsh/kioskui.or.kr/js/jquery.min.js"></script>
+	<script src="/cmsh/kioskui.or.kr/js/slick.js"></script>
+	<script src="/cmsh/kioskui.or.kr/js/jquery.rwdImageMaps.min.js"></script>
+	<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.2.0/kakao.min.js"></script>
+	<script src="/cmsh/kioskui.or.kr/js/common.js?ver=202512182218"></script>
+	<script src="/js/kiosk/kiosk_common.js?ver=202512182218"></script>
+	<script src="/js/kiosk/modal.js?ver=202512182218"></script>
+	<script src="/EDotXPressHtml/js/edotxpress-html.min.js?t=20240118"></script>
+	<script src="/EDotXPressHtml/js/edotxpress-common.js?t=20240118"></script>
+	<script src="/EDotXPressHtml/js/edotxpress-config-nia.js?t=20240118"></script>
+	<script>
+		function rate(domain_id,menu_id){
+			if($(':radio[name="satisfaction_chk"]:checked').val() == undefined){
+				com.alert("만족도를 체크해주시기 바랍니다.",$(':radio[name="satisfaction_chk"]'));
+				return;
+			}
+			console.log("?domain_id="+domain_id+"&menu_id="+menu_id+"&chk="+$(':radio[name="satisfaction_chk"]:checked').val());
+			$.ajax({
+				type : "POST"
+				, data :  "domain_id="+domain_id+"&menu_id="+menu_id+"&chk="+$(':radio[name="satisfaction_chk"]:checked').val()
+				, url : "/icms_menu_satisfaction.do"
+				, success : function(data){
+					if(data =='ok' ){
+						com.alert("의견이 정상적으로 반영되었습니다. 감사합니다. ");
+					}else if(data == 'duplicated') {
+						com.alert("이미 평가가 완료된 사용자입니다.");
+					}
+					else{
+						com.alert('데이타 입력도중 에러가 발생하였습니다. 다시 한번 시도해 주시기 바랍니다.');
+					}
+				}
+				, error : function(data, status, err){
+					com.alert("서버와의 통신이 실패했습니다.");
+				}
+			});
+		}
+		
+	</script>
+	<!-- 메뉴 CSS -->
+	
+	<!-- // 메뉴 CSS -->
+	<!-- 메뉴 JS -->
+	
+	<!-- // 메뉴 JS -->
+</head>
+<body class="c00001075" data-menu-idtop="00000912" data-menu-idup="00001041" data-menu-type="00001075">
+<div id="wrap">
+	<!-- Skip Content -->
+	<div id="skip_nav"><a href="#content">본문 바로가기</a></div>
+	<!-- // Skip Content -->
+	<!-- Header -->
+	
+
+
+
+
+
+
+
+
+
+
+
+<header id="header">
+	<div class="inr">
+		<div class="header_body">
+			<div class="logo_wrap">
+				<!-- 로고 area -->
+				<h1 class="logo"><a href="/index.do">무인정보단말기UI플랫폼</a></h1>
+				<!-- // 로고 area -->
+			</div>
+			<div class="h_right">
+				<!-- Util area -->
+				<div class="util_area">
+					<div class="mem_lst">
+						
+							<a href="/index.do?menu_id=00000742" class="login">로그인</a>
+							
+						
+						
+					</div>
+					<!-- 사이트맵 -->
+					<button type="button" class="sitemap" aria-controls="sitemapLy" aria-expanded="false">사이트맵 <span class="hidden">열기</span></button>
+					<div class="sitemap_wrap" id="sitemapLy">
+						<div class="stm_header">
+							<div class="inr">
+								<div class="stm_logo"><img src="/cmsh/kioskui.or.kr/images/common/logo_stm.png" alt="무인정보단말기UI플랫폼"></div>
+							</div>
+						</div>
+						<div class="stm_container">
+							<div class="inr">
+								<ul class="stm_lst">
+									<li>
+										
+											
+												
+
+
+
+
+
+
+
+
+
+
+
+<nav class="snb_wrap">
+	<h2 class="title"><span>무인정보단말기</span></h2>
+	<ul class='snb'>
+<li>
+    <a href="/index.do?menu_id=00001026">안내</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001210">UI 가이드 원칙</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001028">공통 프로세스</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001270">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001037">주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001036">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001038">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001039">안내 및 기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001029" class=on>공통 UI 가이드</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001027">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001040">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001041" class=on>주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001042">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001043">안내 및 기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001030">공통 프로토타입</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001044">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001045">주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001046">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001047">안내 및 기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001031">장애 유형별 공통 UI 가이드</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001260">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001048">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001049">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001050">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001032">장애 유형별 공통 UI 프로토타입</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001098">유통형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001099">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001100">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001101">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001052">주문형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001089">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001090">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001091">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001053">발권형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001092">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001093">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001094">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001054">안내 및 기타</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001095">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001096">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001097">수어</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000915">UI 리소스</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000950">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000951">무인민원발급기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000952">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000954">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001102">무인증명발매기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001119">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001120">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001103">금융자동화기기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001124">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001125">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001104">무인발권기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001129">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001130">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001105">무인주유기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001134">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001135">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001106">셀프체크인</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001139">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001140">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001107">무인발매기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001144">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001145">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001108">무인처방전발매기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001149">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001150">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001109">무인주문기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001154">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001155">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001112">무인사용자 인증기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001159">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001160">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001113">무인결제기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001164">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001165">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001114">무인주차정산기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001169">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001170">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001115">무인도서대여반납기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001174">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001175">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001116">종합정보시스템</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001179">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001180">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001117">위치정보시스템</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001184">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001185">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001118">기타</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001189">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001190">템플릿</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000916">접근성 보장 우선구매</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001018">우선구매제도 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001019">우선구매대상지능정보제품</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001020">추진체계</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001300">시험평가기관</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000830">우선구매대상지능정보제품 현황</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001284">무인정보단말기 협의체</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000914">체험</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000780">무인정보단말기 교육 동영상</a>
+</li>
+<li>
+    <a href="https://www.kioskux.com" target="_blank">무인정보단말기 화면 체험</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000918">무인정보단말기 용어 가이드</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000919">UI 개발지원 도구</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001021">도구 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001022">사용방법 및 다운로드</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</nav>
+
+
+											
+											
+										
+									</li>
+									<li>
+										
+											
+											
+												
+
+
+
+
+
+
+
+
+
+
+
+<nav class="snb_wrap">
+	<h2 class="title"><span>정보접근성</span></h2>
+	<ul class='snb'>
+<li>
+    <a href="/index.do?menu_id=00000971">정보접근성 개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000972">정보접근성 유형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000973">웹 접근성</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000975">표준소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000976">제작기법</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000977">평가도구 소개</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000978">모바일 앱 접근성</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000980">표준소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000981">제작기법</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000982">평가도구 소개</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000983">무인정보단말기 접근성</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000984">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000985">표준소개</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000986">법∙제도</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000987">국내</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001055">법령·고시</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001056">제작기법</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001062">정보격차 실태조사</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000988">해외</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000997">정보접근성 표준</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000998">국내</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000999">해외</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001000">국제표준화기구</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001010">관련사이트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001015">정보접근성 품질인증</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001016">품질인증 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001017">품질인증 현황</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</nav>
+
+
+											
+										
+									</li>
+									<li>
+										
+											
+											
+												
+
+
+
+
+
+
+
+
+
+
+
+<nav class="snb_wrap">
+	<h2 class="title"><span>알림마당</span></h2>
+	<ul class='snb'>
+<li>
+    <a href="/index.do?menu_id=00000679">공지사항</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000731">자료실</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000860">일정관리</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000730">설문조사</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000740">FAQ</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000744">질의응답</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000941">교육마당</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001082">정보접근성 교육 신청</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001083">정보접근성 세미나 신청</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</nav>
+
+
+											
+										
+									</li>
+									<li>
+										
+											
+											
+												
+
+
+
+
+
+
+
+
+
+
+
+<nav class="snb_wrap">
+	<h2 class="title"><span>UI 플랫폼 소개</span></h2>
+	<ul class='snb'>
+<li>
+    <a href="/index.do?menu_id=00000960">UI 플랫폼 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000962">라이선스</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000963">지원서비스</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000964">기술지원</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000965">교육지원</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</nav>
+
+
+											
+										
+									</li>
+									<li>
+									   
+										 
+										 
+										   
+
+
+
+
+
+
+
+
+
+
+
+<nav class="snb_wrap">
+	<h2 class="title"><span>배리어프리 키오스크 지원센터</span></h2>
+	<ul class='snb'>
+<li>
+    <a href="/index.do?menu_id=00001411">공지사항</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001412">컨설팅</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001415">UI/UX 제작 및 지원</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001416">키오스크 업그레이드 지원</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001417">시험평가 비용 지원</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001418">전문인력 교육</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001419">정책 및 사업설명회</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001420">질의응답</a>
+</li>
+</ul>
+
+</nav>
+
+
+										 
+									   
+									 </li>
+								</ul>
+							</div>
+						</div>
+						<button class="btn_close">사이트맵 닫기</button>
+					</div>
+					<!-- // 사이트맵 -->
+				</div>
+				<!-- // Util area -->
+				<!-- 헤더 GNB -->
+				<nav class="gnb_wrap">
+					<div class="inr">
+						<h2 class="hidden">주메뉴</h2>
+						<ul id="gnb">
+							<li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00000912"><span>무인정보단말기</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00000912"><span>무인정보단말기</span></a>
+				
+		</h2>
+		<ul>
+<li>
+    <a href="/index.do?menu_id=00001026">안내</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001210">UI 가이드 원칙</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001028">공통 프로세스</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001270">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001037">주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001036">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001038">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001039">안내 및 기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001029">공통 UI 가이드</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001027">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001040">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001041">주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001042">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001043">안내 및 기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001030">공통 프로토타입</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001044">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001045">주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001046">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001047">안내 및 기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001031">장애 유형별 공통 UI 가이드</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001260">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001048">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001049">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001050">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001032">장애 유형별 공통 UI 프로토타입</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001098">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001052">주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001053">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001054">안내 및 기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000915">UI 리소스</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000950">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000951">무인민원발급기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001102">무인증명발매기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001103">금융자동화기기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001104">무인발권기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001105">무인주유기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001106">셀프체크인</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001107">무인발매기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001108">무인처방전발매기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001109">무인주문기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001112">무인사용자 인증기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001113">무인결제기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001114">무인주차정산기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001115">무인도서대여반납기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001116">종합정보시스템</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001117">위치정보시스템</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001118">기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000916">접근성 보장 우선구매</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001018">우선구매제도 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001019">우선구매대상지능정보제품</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001020">추진체계</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001300">시험평가기관</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000830">우선구매대상지능정보제품 현황</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001284">무인정보단말기 협의체</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000914">체험</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000780">무인정보단말기 교육 동영상</a>
+</li>
+<li>
+    <a href="https://www.kioskux.com" target="_blank">무인정보단말기 화면 체험</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000918">무인정보단말기 용어 가이드</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000919">UI 개발지원 도구</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001021">도구 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001022">사용방법 및 다운로드</a>
+</li>
+</ul>
+</li>
+</ul>
+
+	</div>
+</div></li>
+							<li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00000911"><span>정보접근성</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00000911"><span>정보접근성</span></a>
+				
+		</h2>
+		<ul>
+<li>
+    <a href="/index.do?menu_id=00000971">정보접근성 개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000972">정보접근성 유형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000973">웹 접근성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000978">모바일 앱 접근성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000983">무인정보단말기 접근성</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000986">법∙제도</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000987">국내</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000988">해외</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000997">정보접근성 표준</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000998">국내</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000999">해외</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001000">국제표준화기구</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001010">관련사이트</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001011">정부기관</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001012">해외기관</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001071">민간기관</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001015">정보접근성 품질인증</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001016">품질인증 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001017">품질인증 현황</a>
+</li>
+</ul>
+</li>
+</ul>
+
+	</div>
+</div></li>
+							<li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00000297"><span>알림마당</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00000297"><span>알림마당</span></a>
+				
+		</h2>
+		<ul>
+<li>
+    <a href="/index.do?menu_id=00000679">공지사항</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000731">자료실</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001200">표준지침</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001068">연구자료</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001070">교육세미나</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001072">기타자료</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000860">일정관리</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000730">설문조사</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000740">FAQ</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001281">웹 접근성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001282">모바일 접근성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001283">무인정보단말기 접근성</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000744">질의응답</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001110">웹 접근성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001280">모바일 접근성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001111">무인정보단말기 접근성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001320">스마트 상점 관련</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000941">교육마당</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001082">정보접근성 교육 신청</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001083">정보접근성 세미나 신청</a>
+</li>
+</ul>
+</li>
+</ul>
+
+	</div>
+</div></li>
+							<li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00000910"><span>UI 플랫폼 소개</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00000910"><span>UI 플랫폼 소개</span></a>
+				
+		</h2>
+		<ul>
+<li>
+    <a href="/index.do?menu_id=00000960">UI 플랫폼 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000962">라이선스</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000963">지원서비스</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000964">기술지원</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000965">교육지원</a>
+</li>
+</ul>
+</li>
+</ul>
+
+	</div>
+</div></li>
+							<li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00001410"><span>배리어프리 키오스크 지원센터</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00001410"><span>배리어프리 키오스크 지원센터</span></a>
+				
+		</h2>
+		<ul>
+<li>
+    <a href="/index.do?menu_id=00001411">공지사항</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001412">컨설팅</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001415">UI/UX 제작 및 지원</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001416">키오스크 업그레이드 지원</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001417">시험평가 비용 지원</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001418">전문인력 교육</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001419">정책 및 사업설명회</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001420">질의응답</a>
+</li>
+</ul>
+
+	</div>
+</div></li>
+						</ul>
+						<div class="gnb_bg">
+							<div class="inr">
+							</div>
+						</div>
+					</div>
+				</nav>
+				<!-- // 헤더 GNB -->
+			</div>
+			<!-- 모바일 전체메뉴 -->
+			<nav class="wholeview_wrap ">
+				<button type="button" class="btn_wv" title="축소됨"><span class="sp_ui">전체메뉴</span></button>
+				<div id="wholeview">
+					<div class="inr">
+						<!-- head -->
+						<div class="head">
+							<div class="area_top">
+								<a href="/index.do" class="home">홈으로</a>
+								<button type="button" class="w_close_btn">닫기</button>
+							</div>
+							<div class="mem_lst">
+								
+									<a href="/index.do?menu_id=00000742" class="login">로그인</a>
+									
+								
+								
+							</div>
+						</div>
+						<!-- // head -->
+						<!-- 전체메뉴 -->
+						<div class="nav_wrap">
+							<div class="menu">
+								<ul class="nav">
+									<li data-target="submenu1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00000912"><span>무인정보단말기</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00000912"><span>무인정보단말기</span></a>
+				
+		</h2>
+		<ul>
+</ul>
+
+	</div>
+</div></li>
+									<li data-target="submenu2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00000911"><span>정보접근성</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00000911"><span>정보접근성</span></a>
+				
+		</h2>
+		<ul>
+</ul>
+
+	</div>
+</div></li>
+									<li data-target="submenu3">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00000297"><span>알림마당</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00000297"><span>알림마당</span></a>
+				
+		</h2>
+		<ul>
+</ul>
+
+	</div>
+</div></li>
+									<li data-target="submenu4">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00000910"><span>UI 플랫폼 소개</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00000910"><span>UI 플랫폼 소개</span></a>
+				
+		</h2>
+		<ul>
+</ul>
+
+	</div>
+</div></li>
+									<li data-target="submenu5">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00001410"><span>배리어프리 키오스크 지원센터</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00001410"><span>배리어프리 키오스크 지원센터</span></a>
+				
+		</h2>
+		<ul>
+</ul>
+
+	</div>
+</div></li>
+								</ul>
+							</div>
+							<div class="submenu">
+								<ul class="nav">
+									<li id="submenu1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00000912"><span>무인정보단말기</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00000912"><span>무인정보단말기</span></a>
+				
+		</h2>
+		<ul>
+<li>
+    <a href="/index.do?menu_id=00001026">안내</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001210">UI 가이드 원칙</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001028">공통 프로세스</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001270">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001037">주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001036">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001038">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001039">안내 및 기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001029">공통 UI 가이드</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001027">개요</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001211">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001033">화면 레이아웃 가이드</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001034">사용성 체크리스트</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001040">유통형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001073">유통형 무인정보단말기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001074">사용성 체크리스트</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001041">주문형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001075">주문형 무인정보단말기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001076">사용성 체크리스트</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001042">발권형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001077">발권형 무인정보단말기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001078">사용성 체크리스트</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001043">안내 및 기타</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001079">안내 및 기타 무인정보단말기</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001080">사용성 체크리스트</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001030">공통 프로토타입</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001044">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001045">주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001046">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001047">안내 및 기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001031">장애 유형별 공통 UI 가이드</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001260">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001048">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001049">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001050">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001032">장애 유형별 공통 UI 프로토타입</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001098">유통형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001099">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001100">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001101">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001052">주문형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001089">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001090">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001091">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001053">발권형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001092">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001093">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001094">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001054">안내 및 기타</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001095">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001096">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001097">수어</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000915">UI 리소스</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000950">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000951">무인민원발급기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000952">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000954">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001102">무인증명발매기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001119">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001120">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001103">금융자동화기기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001124">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001125">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001104">무인발권기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001129">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001130">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001105">무인주유기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001134">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001135">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001106">셀프체크인</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001139">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001140">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001107">무인발매기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001144">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001145">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001108">무인처방전발매기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001149">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001150">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001109">무인주문기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001154">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001155">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001112">무인사용자 인증기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001159">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001160">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001113">무인결제기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001164">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001165">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001114">무인주차정산기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001169">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001170">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001115">무인도서대여반납기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001174">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001175">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001116">종합정보시스템</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001179">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001180">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001117">위치정보시스템</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001184">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001185">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001118">기타</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001189">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001190">템플릿</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000916">접근성 보장 우선구매</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001018">우선구매제도 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001019">우선구매대상지능정보제품</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001020">추진체계</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001300">시험평가기관</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000830">우선구매대상지능정보제품 현황</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001284">무인정보단말기 협의체</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000914">체험</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000780">무인정보단말기 교육 동영상</a>
+</li>
+<li>
+    <a href="https://www.kioskux.com" target="_blank">무인정보단말기 화면 체험</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000918">무인정보단말기 용어 가이드</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000919">UI 개발지원 도구</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001021">도구 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001022">사용방법 및 다운로드</a>
+</li>
+</ul>
+</li>
+</ul>
+
+	</div>
+</div></li>
+									<li id="submenu2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00000911"><span>정보접근성</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00000911"><span>정보접근성</span></a>
+				
+		</h2>
+		<ul>
+<li>
+    <a href="/index.do?menu_id=00000971">정보접근성 개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000972">정보접근성 유형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000973">웹 접근성</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000975">표준소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000976">제작기법</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000977">평가도구 소개</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000978">모바일 앱 접근성</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000980">표준소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000981">제작기법</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000982">평가도구 소개</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000983">무인정보단말기 접근성</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000984">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000985">표준소개</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000986">법∙제도</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000987">국내</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001055">법령·고시</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001056">제작기법</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001062">정보격차 실태조사</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000988">해외</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000996">미국</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000992">EU</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000997">정보접근성 표준</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000998">국내</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001001">국가표준</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001002">단체표준</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000999">해외</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001000">국제표준화기구</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001007">ISO</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001009">W3C/WAI</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001010">관련사이트</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001011">정부기관</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001012">해외기관</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001071">민간기관</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001015">정보접근성 품질인증</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001016">품질인증 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001017">품질인증 현황</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001084">웹 접근성</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+	</div>
+</div></li>
+									<li id="submenu3">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00000297"><span>알림마당</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00000297"><span>알림마당</span></a>
+				
+		</h2>
+		<ul>
+<li>
+    <a href="/index.do?menu_id=00000679">공지사항</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000731">자료실</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001200">표준지침</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001068">연구자료</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001070">교육세미나</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001072">기타자료</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000860">일정관리</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000730">설문조사</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000740">FAQ</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001281">웹 접근성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001282">모바일 접근성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001283">무인정보단말기 접근성</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000744">질의응답</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001110">웹 접근성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001280">모바일 접근성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001111">무인정보단말기 접근성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001320">스마트 상점 관련</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000941">교육마당</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001082">정보접근성 교육 신청</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001083">정보접근성 세미나 신청</a>
+</li>
+</ul>
+</li>
+</ul>
+
+	</div>
+</div></li>
+									<li id="submenu4">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00000910"><span>UI 플랫폼 소개</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00000910"><span>UI 플랫폼 소개</span></a>
+				
+		</h2>
+		<ul>
+<li>
+    <a href="/index.do?menu_id=00000960">UI 플랫폼 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000962">라이선스</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000963">지원서비스</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000964">기술지원</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000965">교육지원</a>
+</li>
+</ul>
+</li>
+</ul>
+
+	</div>
+</div></li>
+									<li id="submenu5">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/index.do?menu_id=00001410"><span>배리어프리 키오스크 지원센터</span></a>
+
+<div>
+	<div class="depth2 inr">
+		<h2 class="tit_d1">
+				
+				
+					<a href="/index.do?menu_id=00001410"><span>배리어프리 키오스크 지원센터</span></a>
+				
+		</h2>
+		<ul>
+<li>
+    <a href="/index.do?menu_id=00001411">공지사항</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001412">컨설팅</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001415">UI/UX 제작 및 지원</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001416">키오스크 업그레이드 지원</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001417">시험평가 비용 지원</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001418">전문인력 교육</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001419">정책 및 사업설명회</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001420">질의응답</a>
+</li>
+</ul>
+
+	</div>
+</div></li>
+								</ul>
+							</div>
+						</div>
+						<!-- 전체메뉴 -->
+					</div>
+				</div>
+				<!-- 메뉴배경-->
+				<div class="dim_wv">
+				</div>
+				<!-- 메뉴배경-->
+			</nav>
+			<!-- // 모바일 전체메뉴 -->
+		</div>
+	</div>
+</header>
+<div class="gnb_dim"></div>
+	<!-- // Header -->
+	<!-- Container -->
+	<div id="container">
+		<div class="inr">
+			<!-- Side -->
+			<div id="side">
+				
+					
+					
+						
+
+
+
+
+
+
+
+
+
+
+
+<nav class="snb_wrap">
+	<h2 class="title"><span>무인정보단말기</span></h2>
+	<ul class='snb'>
+<li>
+    <a href="/index.do?menu_id=00001026">안내</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001210">UI 가이드 원칙</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001028">공통 프로세스</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001270">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001037">주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001036">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001038">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001039">안내 및 기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001029" class=on>공통 UI 가이드</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001027">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001040">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001041" class=on>주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001042">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001043">안내 및 기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001030">공통 프로토타입</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001044">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001045">주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001046">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001047">안내 및 기타</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001031">장애 유형별 공통 UI 가이드</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001260">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001048">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001049">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001050">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001032">장애 유형별 공통 UI 프로토타입</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001098">유통형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001099">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001100">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001101">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001052">주문형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001089">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001090">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001091">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001053">발권형</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001092">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001093">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001094">수어</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001054">안내 및 기타</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001095">음성</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001096">점자</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001097">수어</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000915">UI 리소스</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000950">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000951">무인민원발급기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000952">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000954">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001102">무인증명발매기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001119">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001120">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001103">금융자동화기기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001124">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001125">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001104">무인발권기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001129">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001130">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001105">무인주유기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001134">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001135">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001106">셀프체크인</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001139">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001140">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001107">무인발매기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001144">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001145">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001108">무인처방전발매기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001149">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001150">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001109">무인주문기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001154">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001155">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001112">무인사용자 인증기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001159">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001160">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001113">무인결제기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001164">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001165">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001114">무인주차정산기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001169">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001170">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001115">무인도서대여반납기</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001174">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001175">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001116">종합정보시스템</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001179">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001180">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001117">위치정보시스템</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001184">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001185">템플릿</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001118">기타</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001189">컴포넌트</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001190">템플릿</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000916">접근성 보장 우선구매</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001018">우선구매제도 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001019">우선구매대상지능정보제품</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001020">추진체계</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001300">시험평가기관</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000830">우선구매대상지능정보제품 현황</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001284">무인정보단말기 협의체</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000914">체험</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00000780">무인정보단말기 교육 동영상</a>
+</li>
+<li>
+    <a href="https://www.kioskux.com" target="_blank">무인정보단말기 화면 체험</a>
+</li>
+</ul>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000918">무인정보단말기 용어 가이드</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00000919">UI 개발지원 도구</a>
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001021">도구 소개</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001022">사용방법 및 다운로드</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</nav>
+
+
+					
+				
+			</div>
+			<!-- // Side -->
+			<!-- Content -->
+			<div id="content" class="cont_wrap">
+				<!-- Location -->
+				<div class="area_location">
+					
+
+
+
+
+
+
+
+
+
+
+
+<ol class="location">
+	<li><a href="/">홈</a></li>
+	
+		<li  ><a href="/index.do?menu_id=00000912">무인정보단말기</a></li>
+	
+		<li  ><a href="/index.do?menu_id=00001029">공통 UI 가이드</a></li>
+	
+		<li  ><a href="/index.do?menu_id=00001041">주문형</a></li>
+		
+</ol>
+
+				</div>
+				<!-- // Location -->
+				<!-- Cont_head -->
+				<header class="cont_head">
+					<button type="button" class="btn_back" onclick="history.go(-1); return false;">이전</button>
+					<!-- 컨텐츠 제목 -->
+					<div class="area_title">
+						<!-- 타이틀 -->
+						<h1 class="title ">
+							<span>
+								
+									주문형
+								
+								
+							</span>
+						</h1>
+						<!-- // 타이틀 -->
+						<!-- 컨텐츠 제목 형제 메뉴 -->
+						<div class="nav">
+							
+								
+									
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+<li>
+    <a href="/index.do?menu_id=00001027">개요</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001040">유통형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001041">주문형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001042">발권형</a>
+</li>
+<li>
+    <a href="/index.do?menu_id=00001043">안내 및 기타</a>
+</li>
+</ul>
+
+
+
+
+
+								
+							
+							
+						</div>
+						<!-- // 컨텐츠 제목 형제 메뉴 -->
+					</div>
+					<!-- // 컨텐츠 제목 -->
+					<!-- Util -->
+					<div class="util_area">
+						<button class="btn_braille01" title="점자뷰어 새창보기" onclick="openBrlViewer('주문형 무인정보단말기')">점자뷰어 보기</button>
+						<button class="btn_braille02" title="전자점자파일 내려받기" onclick="exportBrl('brl', '주문형 무인정보단말기')">전자점자파일 내려받기</button>
+						<button class="btn_zin">화면확대</button>
+						<button class="btn_zout">화면축소</button>
+						<button class="btn_print" onclick="window.print()">인쇄</button>
+						<div class="c_share_box">
+							<button class="btn_share">공유하기</button>
+							<div class="ly_share">
+								
+									
+									
+										<button class="sp_sns btn_twitter" onclick="fn_shareTwitter('[무인정보단말기UI플랫폼]%0A%0A주문형 무인정보단말기', 'https://www.kioskui.or.kr/index.do?menu_id=00001075');" title="새창">트위터로 공유</button>
+										<button class="sp_sns btn_facebook" title="새창" onclick="fn_shareFacebook( 'https://www.kioskui.or.kr/index.do?menu_id=00001075')">페이스북으로 공유</button>
+										<button class="sp_sns btn_blog" title="새창" onclick="fn_shareBand('[무인정보단말기UI플랫폼]%0A%0A주문형 무인정보단말기', 'https://www.kioskui.or.kr/index.do?menu_id=00001075')">블로그로 공유</button>
+										<button class="sp_sns btn_kakao" title="새창" id="kakao-link-btn" onclick="fn_shareKakao('[무인정보단말기UI플랫폼]\r\n\r\n주문형', '주문형 무인정보단말기', 'https://www.kioskui.or.kr/index.do?menu_id=00001075')">카카오톡 공유</button>
+										<button class="btn_close">닫기</button>
+									
+								
+							</div>
+						</div>
+					</div>
+					<!-- // Util -->
+				</header>
+				<!-- // Cont_head -->
+				<!-- Cont_body -->
+				<div class="cont_body">
+					<!-- LNB메뉴 가이드 s -->
+					
+						
+
+
+
+
+
+
+
+
+
+
+
+<!-- 상위메뉴탭 -->
+
+<!-- 자신의 메뉴텝 -->
+
+
+
+	
+	
+		<!-- 일반(4개 이하) -->
+		<div class="lnb tmn01">
+	
+
+		<button type="button" class="btn_left">왼쪽으로 이동</button>
+		<ul>
+		
+			<li  class="on">
+				<a href="?menu_id=00001075"  ><span>주문형 무인정보단말기 </span></a>
+			</li>
+		
+			<li >
+				<a href="?menu_id=00001076"  ><span>사용성 체크리스트 </span></a>
+			</li>
+		
+		</ul>
+		<button type="button" class="btn_right">오른쪽으로 이동</button>
+	</div>
+
+
+					
+					<!-- LNB메뉴 가이드 E -->
+					<!-- 컨텐츠 가이드 S -->
+					<!-- 컨텐츠 -->
+					
+						
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					
+						
+
+
+
+
+
+
+
+
+
+
+
+<div class="cont_ui_guide">
+<div class="info_box">
+<div class="inr">
+<h2 class="tit">주문형 무인정보단말기는 직원의 도움이 필요한 음식물 등의 주문 및 구매하는 유형이다.</h2>
+
+<ul class="keyword_lst">
+	<li>무인주문기</li>
+</ul>
+
+<div class="tab_wrap">
+<ul class="tab06">
+	<li>
+	<div class="tab_bg"><span class="num">1</span><span class="txt">시작안내</span></div>
+	</li>
+	<li>
+	<div class="tab_bg"><span class="num">2</span><span class="txt">기본선택</span></div>
+	</li>
+	<li>
+	<div class="tab_bg"><span class="num">3</span><span class="txt">옵션선택</span></div>
+	</li>
+	<li>
+	<div class="tab_bg"><span class="num">4</span><span class="txt">내역확인</span></div>
+	</li>
+	<li>
+	<div class="tab_bg"><span class="num">5</span><span class="txt">결제하기</span></div>
+	</li>
+	<li>
+	<div class="tab_bg"><span class="num">6</span><span class="txt">완료</span></div>
+	</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="ui_check">
+<div class="conBox0 ui_box">
+<div class="inr">
+<p class="title1">예시</p>
+
+<div class="box1">
+<div class="flx_lst_img">
+<div><span><img alt="주문형 무인주문기 예시이미지" src="/cmsh/kioskui.or.kr/images/content/img_ui_ticket01_1.jpg" /> <strong class="ui_box_tit">무인주문기</strong> </span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+					
+					
+						
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					<!-- // 컨텐츠 -->
+					<!-- // 컨텐츠 가이드 E -->
+				</div>
+				<!-- // Cont_body -->
+				<!-- cont_foot -->
+				<div class="cont_foot">
+					<!-- 자료 담당자 -->
+					
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- <div class="onesPost"> -->
+	<div class="cont_manager">
+
+
+		<dl class="manager">
+			<dt>자료 담당자</dt>
+			<dd>
+				
+				<span class="name">김민수 책임</span>
+			</dd>
+		</dl>
+		<dl class="tel">
+			<dt>전화번호</dt>
+			<dd>053-230-1380</dd>
+		</dl>
+		<dl class="update">
+			
+			
+			<dt>최근자료수정일</dt>
+			<dd>2025-06-05</dd>
+		</dl>
+	</div>
+
+	<input type="hidden" id="error_user_id" name="error_user_id">
+	<input type="hidden" id="error_menu_id" name="error_menu_id">
+
+	<script type="text/javascript">
+	function checkLogin(){
+		$.ajax({
+		      type: "POST",
+		      url: "/front/icmsError/IcmsLoginCheck.do?menu_id="+"00001075",
+		      success: function(data) {
+		        if(data == null || data == ''){
+		          com.alert('로그인 정보를 가져오는데 실패하였습니다');
+		        }else{
+		          document.getElementById("error_user_id").value = data.user_uniq_id;
+		          document.getElementById("error_menu_id").value = data.menu_id;
+
+		          if(document.getElementById("error_user_id").value != ""){
+		        	  popup_window = window.open("/front/icmsError/IcmsErrorRegisterView.do","pop","width=650,height=450,scrollbars=yes,resizable=yes");
+		            popup_window.focus();
+		          }
+		          else{
+		        	  if(confirm("로그인을 하셔야 사용하실수 있습니다. \r로그인 화면으로 이동합니다.")){
+		        		  // document.location.replace("/?menu_id=00000099&ref=" + "00001075");
+		        		  document.location.replace("/index.do?menu_id=00000099");
+		        	  }
+		          }
+		        }
+		      }
+		      , error: function(data, status, err) {
+		      alert('서버와의 통신이 실패했습니다.');
+		    }
+		  });
+	}
+	</script>
+
+
+
+
+
+
+
+					<!-- // 자료 담당자 -->
+					<!-- 컨텐츠 평가 -->
+					<div class="cont_rating">
+						<div class="inr">
+							<h2>이 페이지의 내용과 사용편의성에 만족하십니까?</h2>
+							<div class="inp_area">
+								<fieldset>
+									<legend>사용편의성 만족도</legend>
+									<div class="form_area">
+										<span>
+												<input type="radio" id="cmt1" value="5" name="satisfaction_chk" class="inp_rdo">
+												<label for="cmt1">매우 만족</label>
+											</span>
+										<span>
+												<input type="radio" id="cmt2" value="4" name="satisfaction_chk" class="inp_rdo">
+												<label for="cmt2">만족</label>
+											</span>
+										<span>
+												<input type="radio" id="cmt3" value="3" name="satisfaction_chk" class="inp_rdo">
+												<label for="cmt3">보통</label>
+											</span>
+										<span>
+												<input type="radio" id="cmt4" value="2" name="satisfaction_chk" class="inp_rdo">
+												<label for="cmt4">불만족</label>
+											</span>
+										<span>
+												<input type="radio" id="cmt5" value="1" name="satisfaction_chk" class="inp_rdo">
+												<label for="cmt5">매우 불만족</label>
+											</span>
+									</div>
+									<input type="button" onclick="rate('DOMAINMSTR_000000000101','00001075');" value="평가하기" class="btn_rate">
+								</fieldset>
+							</div>
+						</div>
+					</div>
+					<!-- //컨텐츠 평가 -->
+				</div>
+				<!-- // cont_foot -->
+			</div>
+			<!-- // Content -->
+		</div>
+	</div>
+	<!-- // Container -->
+	<!-- Footer -->
+	
+
+
+
+
+
+
+
+
+
+
+
+<footer id="footer">
+	<div class="inr">
+		<div class="f_logo"><span class="logo">NIA 한국지능정보사회진흥원</span></div>
+		<div class="f_cont">
+			<div class="f_info">
+				<ul class="info_addr">
+					<li><strong>대구본원</strong><span>대구광역시 동구 첨단로 53 (41068)</span> <span class="tel">053-230-1114</span></li>
+					<li><strong>서울사무소</strong><span>서울특별시 중구 청계천로 14 (04520)</span><span class="tel">053-230-1114</span></li>
+					<li><strong>제주 NIA 글로벌센터</strong><span>제주특별자치도 서귀포시 서호중앙로 68-11 (63568)</span><span class="tel">064-909-3114</span></li>
+				</ul>
+				<ul class="info_cs">
+					<li><strong>지원문의</strong><span class="time">평일 09:00 ~ 18:00</span><span>주말·공휴일·점심시간 휴무</span><span class="tel">배리어프리 키오스크 고객지원 센터(bfsupport@kioskux.com, 1877-0258)</span></li>
+				</ul>
+				<ul class="info_addr">
+					<li><strong>배리어프리 키오스크 고객지원 센터</strong><span>서울특별시 영등포구 영등포로 150, C동 6층 (생각공장 당산) 4호 배리어프리 키오스크 지원 센터</span><span class="tel">1877-0258</span></li>
+				</ul>
+			</div>
+			<div class="f_util">
+				<div class="cssSelect related">
+					<button type="button" class="open_select"><span>관련사이트 가기</span></button>
+					<div class="box_select">
+						<ul>
+							<li><a href="http://www.msit.go.kr/" target="_blank">과학기술정보통신부</a></li>
+							<li><a href="http://www.nia.or.kr/" target="_blank">한국지능정보사회진흥원</a></li>
+							<li><a href="http://www.tta.or.kr/" target="_blank">한국정보통신기술협회</a></li>
+							<li><a href="http://www.w3c.or.kr/" target="_blank">W3C 대한민국 사무국</a></li>
+							<li><a href="http://www.mohw.go.kr/" target="_blank">보건복지부</a></li>
+							<li><a href="http://www.humanrights.go.kr/" target="_blank">국가인권위원회</a></li>
+							<li><a href="http://www.law.go.kr/" target="_blank">법령정보센터</a></li>
+							<li><a href="http://www.at4u.or.kr/" target="_blank">정보통신보조기기</a></li>
+							<li><a href="http://www.relaycall.or.kr/" target="_blank">손말이음센터</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="area_mark">
+					<a href="https://www.innovation.go.kr/" target="_blank"><img src="/cmsh/kioskui.or.kr/images/common/ban_foot01.png" alt="정부혁신 지식정보 포털 혁신24"></a><a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110&amp;skey=1&amp;sval=무인정보단말기UI플랫폼&amp;search_btn=검색" target="_blank"><img src="/cmsh/kioskui.or.kr/images/common/wa_mark.png" alt="과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2024.3.26 ~ 2025.3.25"></a>
+				</div>
+			</div>
+		</div>
+		<div class="f_btm">
+			<ul class="f_btm_menu">
+				<li><a href="/index.do?menu_id=00000701">접근성 정책</a></li>
+				<li><a href="/index.do?menu_id=00001025">이메일무단수집거부</a></li>
+			</ul>
+			<p class="f_copy">&copy; NATIONAL INFORMATION SOCIETY AGENCY ALL RIGHTS RESERVED.</p>
+		</div>
+	</div>
+</footer>
+	<!-- // Footer -->
+</div>
+
+
+
+<script>
+	$(document).ready(function() {
+		// 1. 모달 알림 정보가 있는지 확인
+		if (sessionStorage.getItem("showModal") === "true") {
+			// 2. 모달 메시지를 가져옴
+			var modalMessage = sessionStorage.getItem("modalMessage");
+
+			// 4. 모달 정보를 지워서 1회성으로 처리
+			sessionStorage.removeItem("showModal");
+			sessionStorage.removeItem("modalMessage");
+
+			// 3. 모달 알림을 띄움
+			com.alert(modalMessage);  // 또는 모달 창 띄우기
+		}
+	});
+</script>
+</body>
+</html>

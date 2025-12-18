@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+    <!--
+      GitHub Pages SPA redirect.
+      - Works for project pages: https://<user>.github.io/<repo>/
+      - Redirects /<repo>/some/route -> /<repo>/?/some/route
+      - index.html will then rewrite the URL back (see index.html script)
+    -->
+    <script type="text/javascript">
+      ;(function () {
+        var l = window.location
+        var parts = l.pathname.split('/')
+        // project pages: /<repo>/...
+        var repo = parts.length > 1 ? parts[1] : ''
+        var base = repo ? '/' + repo + '/' : '/'
+
+        var rest = l.pathname.slice(base.length)
+        var search = l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : ''
+        var newUrl = base + '?/' + rest.replace(/&/g, '~and~') + search + l.hash
+        l.replace(newUrl)
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>
+
+

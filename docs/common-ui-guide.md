@@ -1,12 +1,6 @@
-# 공통 UI 가이드 — kioskui.or.kr 정리
+# 공통 UI 가이드
 
 이 문서는 무인정보단말기 UI 플랫폼의 공통 UI 가이드 중 **개요 / 화면 레이아웃 가이드 / 사용성 체크리스트**를 개발팀이 바로 적용할 수 있도록 **핵심만 요약**한 문서입니다.
-
-- 출처: 무인정보단말기 UI 플랫폼 — 공통 UI 가이드 개요/화면 레이아웃 가이드/사용성 체크리스트
-  - 개요: https://www.kioskui.or.kr/index.do?menu_id=00001211&servletPath=%2Findex.do
-  - 화면 레이아웃 가이드: https://www.kioskui.or.kr/index.do?menu_id=00001033&servletPath=%2Findex.do
-  - 사용성 체크리스트: https://www.kioskui.or.kr/index.do?menu_id=00001034&servletPath=%2Findex.do
-
 ---
 
 ## 1) 개요(목적/설명/구성)

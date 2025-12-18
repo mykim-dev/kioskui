@@ -1,10 +1,11 @@
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import Guide from './pages/guide'
-import DistributionSample from './pages/distribution'
-import InfoEtcSample from './pages/info-etc'
-import OrderFlowSample from './pages/order-flow'
-import Order from './pages/order'
-import TicketingSample from './pages/ticketing'
+import Order from './pages/order/list'
+import OrderFlow from './pages/order/flow'
+import OrderMenu from './pages/order/menu'
+import OrderReview from './pages/order/review'
+import OrderPay from './pages/order/pay'
+import OrderComplete from './pages/order/complete'
 import { Button } from './components/ui/button'
 import { Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTitle } from './components/ui/drawer'
 import { MenuIcon, XIcon } from 'lucide-react'
@@ -19,14 +20,19 @@ function App() {
     <div className="w-screen h-screen">
       <Routes>
         <Route path="/" element={<Navigate to="/order/normal" replace />} />
+
+        <Route path="/order" element={<OrderFlow />}>
+          <Route index element={<Navigate to="menu" replace />} />
+          <Route path="menu" element={<OrderMenu />} />
+          <Route path="review" element={<OrderReview />} />
+          <Route path="pay" element={<OrderPay />} />
+          <Route path="complete" element={<OrderComplete />} />
+        </Route>
+
         <Route path="/order/normal" element={<Order mode="light" />} />
         <Route path="/order/high-contrast" element={<Order mode="dark" />} />
         <Route path="/order/low-contrast" element={<Order mode="low-contrast" />} />
         <Route path="/guide" element={<Guide />} />
-        <Route path="/samples/distribution" element={<DistributionSample />} />
-        <Route path="/samples/order" element={<OrderFlowSample />} />
-        <Route path="/samples/ticketing" element={<TicketingSample />} />
-        <Route path="/samples/info-etc" element={<InfoEtcSample />} />
       </Routes>
 
       <Button variant="outline" size="icon" onClick={() => setIsDrawerOpen(true)} className="fixed bottom-1 right-1">
@@ -48,34 +54,16 @@ function App() {
           <nav className="flex flex-col gap-4 p-4">
             <Button variant="outline" size="lg" onClick={() => navigate('/guide')}>
               가이드
+            </Button>            
+            <Button variant="outline" size="lg" onClick={() => navigate('/order')}>
+              주문 플로우(4단계)
             </Button>
             <Button
               variant="outline"
               size="lg"
-              onClick={() => navigate('/samples/distribution')}
-            >
-              유통 샘플
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => navigate('/samples/order')}
+              onClick={() => navigate('/order/normal')}
             >
               주문 샘플
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => navigate('/samples/ticketing')}
-            >
-              발권 샘플
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => navigate('/samples/info-etc')}
-            >
-              안내/기타 샘플
             </Button>
           </nav>
         </DrawerContent>
