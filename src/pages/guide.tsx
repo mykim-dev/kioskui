@@ -6,8 +6,9 @@ import commonUiGuideMd from '../../docs/common-ui-guide.md?raw'
 import checklistMd from '../../docs/component-accessibility-checklist.md?raw'
 import guidelinesMd from '../../docs/kiosk-accessibility-guidelines.md?raw'
 import kioskTypesMd from '../../docs/kiosk-types.md?raw'
+import questionMd from '../../docs/question.md?raw'
 
-type DocKey = 'guidelines' | 'kiosk-types' | 'common-ui-guide' | 'checklist'
+type DocKey = 'guidelines' | 'kiosk-types' | 'common-ui-guide' | 'checklist' | 'question'
 
 const DOCS: Record<DocKey, { title: string; description: string; md: string }> = {
   'kiosk-types': {
@@ -29,6 +30,11 @@ const DOCS: Record<DocKey, { title: string; description: string; md: string }> =
     title: '컴포넌트별 접근성 체크리스트',
     description: '버튼/카드/모달/수량조절/결제 체크 항목',
     md: checklistMd,
+  },
+  question: {
+    title: '질문사항',
+    description: '질문사항 목록',
+    md: questionMd,
   },
 }
 
@@ -78,6 +84,14 @@ export default function Guide() {
           aria-pressed={docKey === 'checklist'}
         >
           컴포넌트 체크리스트
+        </Button>
+        <Button
+          type="button"
+          onClick={() => setDocKey('question')}
+          variant={docKey === 'question' ? 'default' : 'outline'}
+          aria-pressed={docKey === 'question'}
+        >
+          질문사항
         </Button>
       </div>
 

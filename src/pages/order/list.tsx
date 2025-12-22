@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { categories, filterMenus, menus, type CategoryId, type Menu } from '@/mocks/ondemand'
+import { categories, filterMenus, menus, type CategoryId, type Menu } from './mock'
 
 export type KioskMode = 'light' | 'dark' | 'low-contrast'
 

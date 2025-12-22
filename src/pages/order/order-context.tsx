@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useState, type ReactNode } from 'react'
-import { type Menu } from '@/mocks/ondemand'
+import { type Menu } from './mock'
 
 export type CartItem = Menu & { quantity: number }
 

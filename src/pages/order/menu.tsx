@@ -2,9 +2,8 @@ import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { categories, filterMenus, menus, type CategoryId, type Menu } from '@/mocks/ondemand'
+import { categories, filterMenus, menus, type CategoryId, type Menu, ORDER_STEPS } from './mock'
 import SubLayout from './sub-layout'
-import { ORDER_STEPS } from './steps'
 import { useOrder } from './order-context'
 
 function CartPanel() {

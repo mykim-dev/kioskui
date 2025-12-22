@@ -1,4 +1,8 @@
-import type { Menu } from '../mocks/ondemand'
+export type MenuLike = {
+  id: number
+  name: string
+  price: number
+}
 
 export type CartItem = {
   id: number
@@ -7,7 +11,7 @@ export type CartItem = {
   quantity: number
 }
 
-export function addMenuToCart(cart: CartItem[], menu: Menu): CartItem[] {
+export function addMenuToCart(cart: CartItem[], menu: MenuLike): CartItem[] {
   const idx = cart.findIndex((it) => it.id === menu.id)
   if (idx === -1) return [...cart, { id: menu.id, name: menu.name, price: menu.price, quantity: 1 }]
 

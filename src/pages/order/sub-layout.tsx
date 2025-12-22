@@ -9,7 +9,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import { cn } from '@/lib/utils'
 import { BellIcon, HomeIcon, ZoomInIcon, ZoomOutIcon } from 'lucide-react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 
@@ -93,18 +92,14 @@ export default function SubLayout({
               const isActive = idx === activeStepIndex
               const isDone = idx < activeStepIndex
               return (
-                <div
+                <Button
                   key={`${s.label}-${idx}`}
-                  className={cn(
-                    'px-4 py-2 rounded-full border text-sm font-semibold',
-                    isActive && 'bg-slate-900 text-white border-slate-900',
-                    isDone && !isActive && 'bg-slate-100 text-slate-900 border-slate-200',
-                    !isDone && !isActive && 'bg-background text-slate-500 border-slate-200'
-                  )}
+                  variant={isDone ? 'secondary' : isActive ? 'default' : 'outline'}
+                  size="lg"
                   aria-current={isActive ? 'step' : undefined}
                 >
                   {idx + 1}. {s.label}
-                </div>
+                </Button>
               )
             })}
           </div>

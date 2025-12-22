@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import SubLayout from './sub-layout'
-import { ORDER_STEPS } from './steps'
+import { ORDER_STEPS } from './mock'
 import { useOrder } from './order-context'
 
 function ReviewSidePanel() {
